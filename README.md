@@ -52,6 +52,30 @@ First, navigate to https://console.cloud.google.com, then IAM from the menu and 
 
 The name of the service account you will need to assign permissions to is as following:`<YOUR_PROJECT_ID>@appspot.gserviceaccount.com` and will have been automatically created by Google App Engine. *NOTE:* this is done under *IAM*, selecting the account, choosing *Permissions* and then adding the role **Compute Instance Admin (v1)** to it; not under *Service Accounts*.
 
+#### Least Priviledge role
+
+1. Create a custom role, eg. `zorya` and assign following permissions:
+
+```
+clouddebugger.debuggees.create
+cloudsql.instances.list
+cloudsql.instances.get
+cloudsql.instances.update
+cloudtasks.tasks.create
+compute.instanceGroups.get
+compute.instances.list
+compute.instances.start
+compute.instances.stop
+compute.zones.list
+container.clusters.list
+logging.logEntries.create
+```
+
+1. Attach the custom role to a `@appspot.gserviceaccount.com` service account.
+1. Assign also role `Cloud Datastore User`
+1. Remove Compute Admin role.
+1. Check Cloud Logging for possible errors/permission issues. 
+
 ## Flow
 
 * Every hour on the hour a cron job calls `/tasks/schedule` which loop over all the policies
