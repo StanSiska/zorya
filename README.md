@@ -12,10 +12,17 @@ In Slavic mythology, [Zoryas](https://www.wikiwand.com/en/Zorya) are two guardia
 
  - Note: deployment from Google Cloud Shell fails with an error [#25](https://github.com/doitintl/zorya/issues/25).
 
-
 `pip install -r requirements.txt -t lib`
 
 Download and install [Yarn](https://yarnpkg.com/).
+
+##### Errors and solutions
+
+- Command "python setup.py egg_info" failed with error code 1 in /tmp/../grpcio/
+
+Necessary to download GCC compiler and Python3 developer headers.
+
+`install gcc-c++ python3-devel`
 
 ##### Deploy
 `./deploy.sh project-id`
