@@ -16,6 +16,14 @@ In Slavic mythology, [Zoryas](https://www.wikiwand.com/en/Zorya) are two guardia
 
 Download and install [Yarn](https://yarnpkg.com/).
 
+- Install NodeJS and YARN
+
+1. `curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -`
+1. `sudo yum install nodejs`
+1. `curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo`
+1. `sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg`
+1. `sudo yum install yarn`
+
 ##### Errors and solutions
 
 - Command "python setup.py egg_info" failed with error code 1 in /tmp/../grpcio/
