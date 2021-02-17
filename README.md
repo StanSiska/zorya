@@ -58,8 +58,8 @@ The name of the service account you will need to assign permissions to is as fol
 
 ```
 clouddebugger.debuggees.create
-cloudsql.instances.list
 cloudsql.instances.get
+cloudsql.instances.list
 cloudsql.instances.update
 cloudtasks.tasks.create
 compute.instanceGroups.get
@@ -73,7 +73,7 @@ logging.logEntries.create
 
 1. Attach the custom role to a `@appspot.gserviceaccount.com` service account.
 1. Assign also role `Cloud Datastore User`
-1. Remove Compute Admin role.
+1. Remove default `Editor` role.
 1. Check Cloud Logging for possible errors/permission issues. 
 
 ## Flow
